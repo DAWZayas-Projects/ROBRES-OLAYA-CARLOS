@@ -1,20 +1,30 @@
 import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
 import BooksView from '../../containers/BooksView'
+import BookmarksView from '../../screens/BookmarksView'
+import ProfilePageView from '../../screens/ProfilePageView'
+// import TextEditorView from '../../screens/TextEditorView'
+
 import Header from '../../components/Layout/Header'
 import Drawer from '../../components/Layout/Drawer'
 
 const stack = createStackNavigator(
   {
-    Home: {
+    Library: {
       screen: BooksView,
       navigationOptions: {
         title: 'Biblioteca'
       }
     },
-    Custom: {
-      screen: BooksView,
+    Bookmarks: {
+      screen: BookmarksView,
       navigationOptions: {
-        title: 'Working'
+        title: 'Marcapáginas'
+      }
+    },
+    Profile: {
+      screen: ProfilePageView,
+      navigationOptions: {
+        title: 'Mi perfil'
       }
     }
   },
