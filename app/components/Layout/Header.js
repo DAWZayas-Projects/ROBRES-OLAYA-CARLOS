@@ -7,7 +7,7 @@ const getTitle = ({ descriptor }) => descriptor.options.title
 
 const Header = ({ navigation, scene }) => (
   <View style={styles.header}>
-    <Button rounded transparent onPress={navigation.openDrawer} style={styles.button}>
+    <Button rounded light transparent onPress={navigation.openDrawer} style={styles.button}>
       <Icon name="menu" />
     </Button>
     <Title>{getTitle(scene)}</Title>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: 50,
-    backgroundColor: '#AAF'
+    backgroundColor: '#123456'
   },
   button: {
     alignSelf: 'center'
