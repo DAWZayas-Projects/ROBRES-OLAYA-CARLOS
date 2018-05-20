@@ -2,10 +2,15 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { List, ListItem, Icon, Left, Right, Body } from 'native-base'
 
-const BodyDrawer = () => (
+const navTo = ({ descriptors }, route) => {
+  descriptors.stack.navigation.navigate(route)
+  descriptors.stack.navigation.closeDrawer()
+}
+
+const BodyDrawer = props => (
   <View style={styles.container}>
     <List>
-      <ListItem icon>
+      <ListItem onPress={() => navTo(props, 'Library')} icon>
         <Left>
           <Icon name="book" />
         </Left>
@@ -13,7 +18,7 @@ const BodyDrawer = () => (
           <Text>Mi biblioteca</Text>
         </Body>
       </ListItem>
-      <ListItem icon>
+      <ListItem onPress={() => navTo(props, 'Bookmarks')} icon>
         <Left>
           <Icon name="bookmarks" />
         </Left>
@@ -21,7 +26,7 @@ const BodyDrawer = () => (
           <Text>Mis marcas</Text>
         </Body>
       </ListItem>
-      <ListItem icon>
+      <ListItem onPress={() => navTo(props, 'Library')} icon>
         <Left>
           <Icon name="list" />
         </Left>

@@ -1,5 +1,5 @@
-import Header from './Header'
-import Body from './Body'
-import Footer from './Footer'
+import DrawerHeader from './DrawerHeader'
+import DrawerBody from './DrawerBody'
+import DrawerFooter from './DrawerFooter'
 
-export { Header, Body, Footer }
+export { DrawerHeader, DrawerBody, DrawerFooter }
