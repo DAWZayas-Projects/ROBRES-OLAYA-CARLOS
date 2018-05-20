@@ -9,7 +9,7 @@ const BooksView = ({ books }) => (
     data={books}
     keyExtractor={item => item.key}
     numColumns={2}
-    renderItem={({ item }) => Book(item)}
+    renderItem={({ item }) => <Book {...item} />}
   />
 )
 

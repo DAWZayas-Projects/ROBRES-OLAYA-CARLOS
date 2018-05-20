@@ -14,7 +14,10 @@ const Book = ({
       </Body>
     </CardItem>
     <CardItem cardBody>
-      <Image source={thumbnail} style={{ height: 100 }} />
+      <Image
+        source={thumbnail ? { uri: thumbnail } : require('./img/books.jpg')}
+        style={{ height: 100 }}
+      />
     </CardItem>
     <CardItem>
       <Text note>{category}</Text>
@@ -23,8 +26,7 @@ const Book = ({
 )
 
 Book.defaultProps = {
-  category: 'Sin categoría',
-  thumbnail: require('./img/books.jpg')
+  category: 'Sin categoría'
 }
 
 Book.propTypes = {
