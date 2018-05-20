@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
+    "emu": "@powershell emulator -avd Nexus_S_API_23;",
     "test": "jest"
   },
   "dependencies": {
