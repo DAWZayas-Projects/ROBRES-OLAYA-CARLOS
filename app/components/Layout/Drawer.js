@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Drawer as NDrawer } from 'native-base'
-import { DrawerHeader, DrawerBody, DrawerFooter } from './DrawerComponents'
+import DrawerHeader from '../../containers/DrawerHeader'
+import { DrawerBody, DrawerFooter } from './DrawerComponents'
 
 const Drawer = props => (
   <NDrawer>
