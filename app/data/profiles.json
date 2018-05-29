@@ -1,0 +1,86 @@
+{
+  "profiles": [
+    {
+      "info": {
+        "userId": 1,
+        "userName": "gaarlos",
+        "email": "garlos.daw@gmail.com",
+        "profilePic": "http://imagesyoulike.com/images/00000/32x24/00278.jpg"
+      },
+      "aditionalInfo": {
+        "alias": "Garlos",
+        "exLibris": "",
+        "bookmarks": [
+          {
+            "bookId": 125423,
+            "chapterId": "125423-2"
+          }
+        ],
+        "likes": []
+      },
+      "books": [
+        {
+          "info": {
+            "bookId": 125423,
+            "title": "VROOOM VROOOM",
+            "category": "Novela",
+            "authorId": "321saf"
+          },
+          "chapters": [
+            {
+              "id": "125423-1",
+              "title": "Capítulo 1: El reencuentro",
+              "data": ""
+            },
+            {
+              "id": "125423-2",
+              "title": "Capítulo 2: VROOOM",
+              "data": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "info": {
+        "userId": 2,
+        "userName": "gaarlos",
+        "email": "garlos.daw@gmail.com",
+        "profilePic": "http://imagesyoulike.com/images/00000/32x24/00278.jpg"
+      },
+      "aditionalInfo": {
+        "alias": "Garlos",
+        "exLibris": "",
+        "bookmarks": [
+          {
+            "bookId": 125423,
+            "chapterId": "125423-2"
+          }
+        ],
+        "likes": []
+      },
+      "books": [
+        {
+          "info": {
+            "bookId": 125423,
+            "title": "VROOOM VROOOM",
+            "category": "Novela",
+            "authorId": "321saf"
+          },
+          "chapters": [
+            {
+              "id": "125423-1",
+              "title": "Capítulo 1: El reencuentro",
+              "data": ""
+            },
+            {
+              "id": "125423-2",
+              "title": "Capítulo 2: VROOOM",
+              "data": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

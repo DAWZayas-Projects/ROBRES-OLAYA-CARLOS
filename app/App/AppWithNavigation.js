@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { NavigationActions } from 'react-navigation'
 import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 import { View, BackHandler, StatusBar, Alert } from 'react-native'
 
@@ -11,20 +10,11 @@ const addListener = createReduxBoundAddListener('root')
 
 class App extends Component {
   componentDidMount () {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress)
+    BackHandler.removeEventListener('hardwareBackPress', this.confirmExit)
   }
 
   componentWillUnmount () {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress)
-  }
-
-  onBackPress = () => {
-    const { dispatch, nav } = this.props
-    if (nav.index === 0) {
-      this.isLastScreen(nav) && this.confirmExit()
-    }
-    dispatch(NavigationActions.back())
-    return true
+    BackHandler.removeEventListener('hardwareBackPress', this.confirmExit)
   }
 
   confirmExit = () => {
@@ -32,7 +22,7 @@ class App extends Component {
       '¿Seguro que quieres salir?',
       'Aún queda mucho por ver',
       [
-        { text: 'Cancelar', onPress: () => ({}), style: 'cancel' },
+        { text: 'Cancelar', onPress: _ => _, style: 'cancel' },
         { text: 'Salir', onPress: BackHandler.exitApp }
       ],
       { cancelable: true }
