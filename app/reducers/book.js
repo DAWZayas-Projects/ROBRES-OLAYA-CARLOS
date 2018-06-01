@@ -1,55 +1,13 @@
-import { GET_ALL_BOOKS_SUCCESS } from '../actions/books'
+import { GET_ALL_BOOKS_SUCCESS } from '../actions/book'
 
 const initialState = {
-  books: [
-    {
-      key: 1,
-      title: 'Lengua',
-      author: 'Cyn :3',
-      category: 'Apuntes'
-    },
-    {
-      key: 2,
-      title: 'Sintaxis',
-      author: 'Cyn :3',
-      category: 'Ejercicios'
-    },
-    {
-      key: 3,
-      title: 'Informática',
-      author: 'Garlas',
-      category: 'Apuntes'
-    },
-    {
-      key: 4,
-      title: 'Le Fedeo',
-      author: 'Panch'
-    },
-    {
-      key: 5,
-      title: 'Sintaxis',
-      author: 'Cyn :3',
-      category: 'Ejercicios'
-    },
-    {
-      key: 6,
-      title: 'Informática',
-      author: 'Garlas',
-      category: 'Apuntes'
-    },
-    {
-      key: 7,
-      title: 'Le Fedeo',
-      author: 'Panch',
-      category: undefined
-    }
-  ]
+  books: []
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_BOOKS_SUCCESS: {
-      return state
+      return { ...state, books: action.payload }
     }
     default:
       return state

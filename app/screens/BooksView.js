@@ -7,7 +7,7 @@ import Book from '../components/Book'
 const BooksView = ({ books }) => (
   <FlatList
     data={books}
-    keyExtractor={item => item.key}
+    keyExtractor={item => item.bookId}
     numColumns={2}
     renderItem={({ item }) => <Book {...item} />}
   />

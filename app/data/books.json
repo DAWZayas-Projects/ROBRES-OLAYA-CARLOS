@@ -1,0 +1,87 @@
+{
+  "books": [
+    {
+      "info": {
+        "bookId": 125423,
+        "title": "VROOOM VROOOM",
+        "authorId": "321saf",
+        "category": "Novela"
+      },
+      "chapters": [
+        {
+          "id": "125423-1",
+          "title": "Capítulo 1: El reencuentro",
+          "data": ""
+        },
+        {
+          "id": "125423-2",
+          "title": "Capítulo 2: VROOOM",
+          "data": ""
+        }
+      ]
+    },
+    {
+      "info": {
+        "bookId": 1,
+        "title": "Lengua",
+        "authorId": "Cyn :3",
+        "category": "Apuntes"
+      },
+      "chapters": []
+    },
+    {
+      "info": {
+        "bookId": 2,
+        "title": "Sintaxis",
+        "authorId": "Cyn :3",
+        "category": "Ejercicios"
+      },
+      "chapters": []
+    },
+    {
+      "info": {
+        "bookId": 3,
+        "title": "Informática",
+        "authorId": "Garlas",
+        "category": "Apuntes"
+      },
+      "chapters": []
+    },
+    {
+      "info": {
+        "bookId": 4,
+        "title": "Le Fedeo",
+        "authorId": "Panch",
+        "category": null
+      },
+      "chapters": []
+    },
+    {
+      "info": {
+        "bookId": 5,
+        "title": "Sintaxis",
+        "authorId": "Cyn :3",
+        "category": "Ejercicios"
+      },
+      "chapters": []
+    },
+    {
+      "info": {
+        "bookId": 6,
+        "title": "Informática",
+        "authorId": "Garlas",
+        "category": "Apuntes"
+      },
+      "chapters": []
+    },
+    {
+      "info": {
+        "bookId": 7,
+        "title": "Le Fedeo",
+        "authorId": "Panch",
+        "category": null
+      },
+      "chapters": []
+    }
+  ]
+}

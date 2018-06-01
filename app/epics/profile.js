@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import 'rxjs/add/operator/switchMap'
 import { profiles } from '../data/profiles.json'
 
