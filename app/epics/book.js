@@ -1,12 +1,18 @@
 import 'rxjs/add/operator/switchMap'
 import { books } from '../data/books.json'
 
-import { GET_ALL_BOOKS, getAllBooksSuccess } from '../actions/book'
+import {
+  GET_ALL_BOOKS,
+  getAllBooksSuccess,
+  GET_USER_BOOKMARKS,
+  getUserBookmarksSuccess
+} from '../actions/book'
 
 const getAllBooks = action$ =>
   action$.ofType(GET_ALL_BOOKS).switchMap(action => [getAllBooksSuccess(books)])
 
+const getUserBookmarks = action$ =>
+  action$.ofType(GET_USER_BOOKMARKS).switchMap(action => [getUserBookmarksSuccess()])
 // const getUserBooks = _ => _
-// const getUserBookmarks = _ => _
 
-export default [getAllBooks]
+export default [getAllBooks, getUserBookmarks]

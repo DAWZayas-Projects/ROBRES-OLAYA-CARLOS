@@ -1,6 +1,6 @@
 import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
 import BooksView from '../../containers/BooksView'
-import BookmarksView from '../../screens/BookmarksView'
+import BookmarksView from '../../containers/BookmarksView'
 import ProfilePageView from '../../screens/ProfilePageView'
 // import TextEditorView from '../../screens/TextEditorView'
 

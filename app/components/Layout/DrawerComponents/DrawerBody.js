@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { List, ListItem, Icon, Left, Right, Body } from 'native-base'
 
 const navTo = ({ descriptors }, route) => {
-  descriptors.stack.navigation.navigate(route)
+  descriptors.stack.navigation.navigate({ routeName: route, key: route })
   descriptors.stack.navigation.closeDrawer()
 }
 
