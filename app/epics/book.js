@@ -12,7 +12,7 @@ const getAllBooks = action$ =>
   action$.ofType(GET_ALL_BOOKS).switchMap(action => [getAllBooksSuccess(books)])
 
 const getUserBookmarks = action$ =>
-  action$.ofType(GET_USER_BOOKMARKS).switchMap(action => [getUserBookmarksSuccess()])
+  action$.ofType(GET_USER_BOOKMARKS).switchMap(action => [getUserBookmarksSuccess(action.payload)])
 // const getUserBooks = _ => _
 
 export default [getAllBooks, getUserBookmarks]

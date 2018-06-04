@@ -5,7 +5,8 @@
         "bookId": 125423,
         "title": "VROOOM VROOOM",
         "authorId": "321saf",
-        "category": "Novela"
+        "category": "Novela",
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": [
         {
@@ -25,7 +26,8 @@
         "bookId": 1,
         "title": "Lengua",
         "authorId": "Cyn :3",
-        "category": "Apuntes"
+        "category": "Apuntes",
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     },
@@ -34,7 +36,8 @@
         "bookId": 2,
         "title": "Sintaxis",
         "authorId": "Cyn :3",
-        "category": "Ejercicios"
+        "category": "Ejercicios",
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     },
@@ -43,7 +46,8 @@
         "bookId": 3,
         "title": "Informática",
         "authorId": "Garlas",
-        "category": "Apuntes"
+        "category": "Apuntes",
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     },
@@ -52,7 +56,8 @@
         "bookId": 4,
         "title": "Le Fedeo",
         "authorId": "Panch",
-        "category": null
+        "category": null,
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     },
@@ -61,7 +66,8 @@
         "bookId": 5,
         "title": "Sintaxis",
         "authorId": "Cyn :3",
-        "category": "Ejercicios"
+        "category": "Ejercicios",
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     },
@@ -70,7 +76,8 @@
         "bookId": 6,
         "title": "Informática",
         "authorId": "Garlas",
-        "category": "Apuntes"
+        "category": "Apuntes",
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     },
@@ -79,7 +86,8 @@
         "bookId": 7,
         "title": "Le Fedeo",
         "authorId": "Panch",
-        "category": null
+        "category": null,
+        "thumbnail": "https://historiadospuntocero.com/wp-content/uploads/2015/04/book.jpg"
       },
       "chapters": []
     }

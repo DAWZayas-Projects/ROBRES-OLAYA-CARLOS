@@ -14,7 +14,8 @@
           {
             "bookId": 125423,
             "chapterId": "125423-2"
-          }
+          },
+          { "bookId": 3 }
         ],
         "likes": []
       },
