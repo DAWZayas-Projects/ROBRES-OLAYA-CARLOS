@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FlatList } from 'react-native'
 
-import Book from '../components/Book'
+import Book from '../containers/Book'
 
 const BooksView = ({ books }) => (
   <FlatList

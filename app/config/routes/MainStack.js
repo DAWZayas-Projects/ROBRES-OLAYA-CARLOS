@@ -1,5 +1,6 @@
 import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
 import BooksView from '../../containers/BooksView'
+import BookDetails from '../../containers/BookDetails'
 import BookmarksView from '../../containers/BookmarksView'
 import ProfilePageView from '../../screens/ProfilePageView'
 // import TextEditorView from '../../screens/TextEditorView'
@@ -7,14 +8,19 @@ import ProfilePageView from '../../screens/ProfilePageView'
 import Header from '../../components/Layout/Header'
 import Drawer from '../../components/Layout/Drawer'
 
+const LibraryStack = createStackNavigator(
+  {
+    Library: { screen: BooksView },
+    BookDetails: { screen: BookDetails }
+  },
+  {
+    headerMode: 'none'
+  }
+)
+
 const stack = createStackNavigator(
   {
-    Library: {
-      screen: BooksView,
-      navigationOptions: {
-        title: 'Biblioteca'
-      }
-    },
+    LibraryStack: { screen: LibraryStack, navigationOptions: { title: 'Biblioteca' } },
     Bookmarks: {
       screen: BookmarksView,
       navigationOptions: {
