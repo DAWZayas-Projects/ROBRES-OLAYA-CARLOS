@@ -15,10 +15,11 @@ class AnimatedIcon extends Component {
 
   componentDidUpdate = () => {
     const { active } = this.props
-    const color = active ? 0 : 1
+    const color = active ? 1 : 0
 
     Animated.timing(this.color, {
-      toValue: color
+      toValue: color,
+      duration: 150
     }).start()
   }
 
