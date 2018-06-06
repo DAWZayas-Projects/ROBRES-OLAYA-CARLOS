@@ -10,7 +10,10 @@ const mapStateToProps = ({ profile, book }, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  handleSetBookmark: (userId, bookId) => dispatch(setBookmark({ userId, chapterId: ownProps.id }))
+  handleSetBookmark: (userId, bookId) =>
+    dispatch(setBookmark({
+      userId, chapterId: ownProps.id, chapterTitle: ownProps.title, bookId
+    }))
 })
 
 const mergeProps = (stateProps, dispatchProps, ownProps) =>

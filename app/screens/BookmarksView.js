@@ -5,11 +5,13 @@ import { List, ListItem, Thumbnail, Body, Text } from 'native-base'
 
 const Bookmarks = ({ bookmarks }) => (
   <List>
-    {bookmarks.map(({ info }) => (
-      <ListItem key={info.bookId}>
-        <Thumbnail square size={80} source={{ uri: info.thumbnail }} />
+    {bookmarks.map(({
+      bookId, thumbnail, title, chapterId
+    }) => (
+      <ListItem key={`${bookId}-${chapterId}`}>
+        <Thumbnail square size={80} source={{ uri: thumbnail }} />
         <Body>
-          <Text>{info.title}</Text>
+          <Text>{title}</Text>
           <Text note>Its time to build a difference . .</Text>
         </Body>
       </ListItem>

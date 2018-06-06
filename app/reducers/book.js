@@ -1,5 +1,3 @@
-import R from 'ramda'
-
 import {
   GET_ALL_BOOKS_SUCCESS,
   GET_USER_BOOKMARKS_SUCCESS,
@@ -23,10 +21,11 @@ export default (state = initialState, action) => {
     case GET_USER_BOOKMARKS_SUCCESS: {
       const { books } = state
 
-      const userBookmarks = R.innerJoin((book, bookmark) => book.info.bookId === bookmark.bookId)(
-        books,
-        action.payload
-      )
+      const userBookmarks = action.payload.map(bookmark => ({
+        ...books.find(book => book.info.bookId === bookmark.bookId),
+        chapterId: bookmark.chapterId,
+        chapterTitle: bookmark.chapterTitle
+      }))
 
       return { ...state, userBookmarks }
     }
