@@ -9,7 +9,10 @@ import {
 const initialState = {
   books: [],
   userBookmarks: [],
-  bookDetails: {}
+  bookDetails: {
+    info: {},
+    chapters: []
+  }
 }
 
 export default (state = initialState, action) => {

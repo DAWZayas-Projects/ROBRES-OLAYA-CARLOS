@@ -10,14 +10,14 @@ import {
   getBookDetailsSuccess
 } from '../actions/book'
 
-const getAllBooks = action$ =>
+const getAllBooks$ = action$ =>
   action$.ofType(GET_ALL_BOOKS).switchMap(action => [getAllBooksSuccess(books)])
 
-const getUserBookmarks = action$ =>
+const getUserBookmarks$ = action$ =>
   action$.ofType(GET_USER_BOOKMARKS).switchMap(action => [getUserBookmarksSuccess(action.payload)])
 // const getUserBooks = _ => _
 
-const getBookDetails = action$ =>
+const getBookDetails$ = action$ =>
   action$.ofType(GET_BOOK_DETAILS).switchMap(action => [getBookDetailsSuccess(action.payload)])
 
-export default [getAllBooks, getUserBookmarks, getBookDetails]
+export default [getAllBooks$, getUserBookmarks$, getBookDetails$]
