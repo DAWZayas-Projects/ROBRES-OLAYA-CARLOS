@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Animated } from 'react-native'
-import { Icon } from 'native-base'
+import { Icon as NIcon } from 'native-base'
 import PropTypes from 'prop-types'
 
-const AnimatedIcon = Animated.createAnimatedComponent(Icon)
+const Icon = Animated.createAnimatedComponent(NIcon)
 
-class IconStatus extends Component {
+class AnimatedIcon extends Component {
   constructor (props) {
     super(props)
     this.color = new Animated.Value(props.active ? 1 : 0)
@@ -17,8 +17,8 @@ class IconStatus extends Component {
     const { active } = this.props
     const color = active ? 0 : 1
 
-    Animated.timing({
-      toValue: parseInt(color.substring(1), 16)
+    Animated.timing(this.color, {
+      toValue: color
     }).start()
   }
 
@@ -31,11 +31,11 @@ class IconStatus extends Component {
       outputRange: [initialColor, finalColor]
     })
 
-    return <AnimatedIcon style={[style, { color }]} name={name} />
+    return <Icon style={[style, { color }]} name={name} />
   }
 }
 
-IconStatus.defaultProps = {
+AnimatedIcon.defaultProps = {
   active: false,
   initialColor: '#CCC',
   finalColor: '#333',
@@ -43,7 +43,7 @@ IconStatus.defaultProps = {
   style: {}
 }
 
-IconStatus.propTypes = {
+AnimatedIcon.propTypes = {
   active: PropTypes.bool,
   initialColor: PropTypes.string,
   finalColor: PropTypes.string,
@@ -51,4 +51,4 @@ IconStatus.propTypes = {
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 }
 
-export default IconStatus
+export default AnimatedIcon
