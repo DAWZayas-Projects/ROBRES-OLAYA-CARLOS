@@ -6,7 +6,7 @@ import BookmarksView from '../screens/BookmarksView'
 import WithDidMountAction from '../components/WithDidMountAction'
 
 const mapStateToProps = ({ book, profile }) => ({
-  userBookmarks: profile.activeProfile.aditionalInfo.bookmarks,
+  userBookmarks: profile.aditionalInfo.bookmarks,
   bookmarks: book.userBookmarks
 })
 

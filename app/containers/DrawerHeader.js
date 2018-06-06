@@ -6,8 +6,8 @@ import DrawerHeader from '../components/Layout/DrawerComponents/DrawerHeader'
 import WithDidMountAction from '../components/WithDidMountAction'
 
 const mapStateToProps = ({ profile }) => ({
-  alias: profile.activeProfile.aditionalInfo.alias,
-  profilePic: profile.activeProfile.info.profilePic
+  alias: profile.aditionalInfo.alias,
+  profilePic: profile.info.profilePic
 })
 
 const mapDispatchToProps = dispatch => ({
