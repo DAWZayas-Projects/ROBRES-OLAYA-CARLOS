@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
       return { ...state, ...action.payload }
     }
     case SET_BOOKMARK_SUCCESS: {
-      const { bookId, chapterId } = action.payload
+      const { bookId, chapterId, chapterTitle } = action.payload
 
       return {
         ...state,
@@ -32,7 +32,8 @@ export default (state = initialState, action) => {
             ...state.aditionalInfo.bookmarks,
             {
               bookId,
-              chapterId
+              chapterId,
+              chapterTitle
             }
           ]
         }

@@ -13,9 +13,9 @@
         "bookmarks": [
           {
             "bookId": 125423,
-            "chapterId": "125423-2"
-          },
-          { "bookId": 3 }
+            "chapterId": "125423-2",
+            "chapterTitle": "Capítulo 2: ¿Por qué lo usamos?"
+          }
         ],
         "likes": []
       },

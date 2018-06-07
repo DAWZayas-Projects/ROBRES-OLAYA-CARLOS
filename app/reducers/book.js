@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
       const { books } = state
 
       const userBookmarks = action.payload.map(bookmark => ({
-        ...books.find(book => book.info.bookId === bookmark.bookId),
+        ...books.find(book => book.info.bookId === bookmark.bookId).info,
         chapterId: bookmark.chapterId,
         chapterTitle: bookmark.chapterTitle
       }))
