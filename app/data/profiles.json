@@ -2,13 +2,13 @@
   "profiles": [
     {
       "info": {
-        "userId": "321saf",
+        "userId": "io1552",
         "userName": "gaarlos",
         "email": "garlos.daw@gmail.com",
         "profilePic": "http://imagesyoulike.com/images/00000/32x24/00278.jpg"
       },
       "aditionalInfo": {
-        "alias": "Garlos",
+        "alias": "Carlos Robres",
         "exLibris": "",
         "bookmarks": [
           {
@@ -19,27 +19,7 @@
         ],
         "likes": []
       },
-      "books": []
-    },
-    {
-      "info": {
-        "userId": "2",
-        "userName": "gaarlos",
-        "email": "garlos.daw@gmail.com",
-        "profilePic": "http://imagesyoulike.com/images/00000/32x24/00278.jpg"
-      },
-      "aditionalInfo": {
-        "alias": "Garlos",
-        "exLibris": "",
-        "bookmarks": [
-          {
-            "bookId": 125423,
-            "chapterId": "125423-2"
-          }
-        ],
-        "likes": []
-      },
-      "books": [125423]
+      "books": [102356, 456456]
     }
   ]
 }

@@ -5,7 +5,7 @@ import { getBookDetails } from '../actions/book'
 import BookDetails from '../screens/BookDetails'
 import WithDidMountAction from '../components/WithDidMountAction'
 
-const mapStateToProps = ({ book, profile }) => ({
+const mapStateToProps = ({ book }) => ({
   bookInfo: book.bookDetails.info,
   chapters: book.bookDetails.chapters
 })

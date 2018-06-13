@@ -7,8 +7,7 @@ const mapDispatchToProps = dispatch => ({
   handleOnPress: bookId =>
     dispatch(NavigationActions.navigate({
       routeName: 'BookDetails',
-      params: { bookId },
-      key: 'BookDetails'
+      params: { bookId }
     }))
 })
 

@@ -11,7 +11,7 @@ const mapStateToProps = ({ profile }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleDidMountAction: () => dispatch(getProfileInfo('321saf'))
+  handleDidMountAction: () => dispatch(getProfileInfo('io1552'))
 })
 
 export default compose(connect(mapStateToProps, mapDispatchToProps), WithDidMountAction)(DrawerHeader)
