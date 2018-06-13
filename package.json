@@ -6,6 +6,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
     "emu": "@powershell emulator -avd Nexus_S_API_23;",
+    "build":
+      "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:ENVFILE='.env.prod'; cd android; ./gradlew assembleRelease --console plain; cd ..",
+    "build-lx": "cd android && ENVFILE=.env.prod ./gradlew assembleRelease && cd ..",
     "test": "jest"
   },
   "dependencies": {
