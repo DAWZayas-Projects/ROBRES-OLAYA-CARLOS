@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 import { setBookmark } from '../actions/profile'
 import Chapter from '../components/Chapter'
 
-const mapStateToProps = ({ profile, book }, ownProps) => ({
-  hasBookmark: !!profile.aditionalInfo.bookmarks.find(({ chapterId }) => chapterId === ownProps.id),
-  userId: profile.info.userId,
-  bookId: book.bookDetails.info.bookId
-})
+const mapStateToProps = ({ profile, book }, ownProps) => {
+  const thisBookId = book.bookDetails.info.bookId
+
+  return {
+    hasBookmark: !!profile.aditionalInfo.bookmarks.find(({ bookId, chapterId }) => bookId === thisBookId && chapterId === ownProps.id),
+    userId: profile.info.userId,
+    bookId: thisBookId
+  }
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   handleSetBookmark: (userId, bookId) =>
