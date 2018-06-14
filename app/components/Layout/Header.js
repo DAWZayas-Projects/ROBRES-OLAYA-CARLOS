@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const getTitle = ({ descriptor }) => descriptor.options.title
 
-const Header = ({ navigation, scene, ...props }) => (
+const Header = ({ navigation, scene }) => (
   <View style={styles.header}>
     <Button rounded light transparent onPress={navigation.toggleDrawer} style={styles.button}>
       <Icon name="menu" />

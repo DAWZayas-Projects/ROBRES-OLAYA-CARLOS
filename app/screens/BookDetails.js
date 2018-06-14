@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, View } from 'react-native'
 import { Header, Body, Title, Subtitle, Right } from 'native-base'
 import PropTypes from 'prop-types'
 
-import Chapter from '../containers/Chapter'
+import { Chapter } from '../containers'
 
 const BookDetails = ({ bookInfo, chapters }) => (
   <View style={{ flex: 1 }}>
