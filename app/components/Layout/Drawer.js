@@ -1,15 +1,16 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Drawer as NDrawer } from 'native-base'
-import DrawerHeader from '../../containers/DrawerHeader'
-import { DrawerBody, DrawerFooter } from './DrawerComponents'
+import { DrawerItems } from 'react-navigation'
+import { DrawerHeader } from '../../containers'
+import { DrawerFooter } from './DrawerComponents'
 
 const Drawer = props => (
   <NDrawer>
     <View style={styles.container}>
       <View>
         <DrawerHeader />
-        <DrawerBody {...props} />
+        <DrawerItems {...props} />
       </View>
       <DrawerFooter />
     </View>
