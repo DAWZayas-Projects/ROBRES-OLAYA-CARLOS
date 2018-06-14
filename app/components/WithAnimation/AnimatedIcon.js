@@ -39,7 +39,7 @@ class AnimatedIcon extends Component {
 AnimatedIcon.defaultProps = {
   active: false,
   initialColor: '#CCC',
-  finalColor: '#333',
+  finalColor: '#123456',
   name: '',
   style: {}
 }

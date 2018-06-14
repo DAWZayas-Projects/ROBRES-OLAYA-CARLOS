@@ -5,9 +5,10 @@ import { getBookDetails } from '../actions/book'
 import BookDetails from '../screens/BookDetails'
 import WithDidMountAction from '../components/WithDidMountAction'
 
-const mapStateToProps = ({ book }) => ({
+const mapStateToProps = ({ book, profile }) => ({
   bookInfo: book.bookDetails.info,
-  chapters: book.bookDetails.chapters
+  chapters: book.bookDetails.chapters,
+  owner: book.bookDetails.info.authorId === profile.info.userId
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => {

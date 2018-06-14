@@ -1,15 +1,21 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { Icon } from 'native-base'
 import PropTypes from 'prop-types'
 
 import AnimatedIcon from '../WithAnimation/AnimatedIcon'
 
 const Chapter = ({
-  id, title, data, hasBookmark, handleSetBookmark
+  title, data, hasBookmark, handleSetBookmark, owner
 }) => (
   <View>
     <View style={styles.chapterHeader}>
       <Text>{title}</Text>
+      {owner && (
+        <TouchableHighlight>
+          <Icon name="create" style={{ color: '#123456' }} />
+        </TouchableHighlight>
+      )}
       <TouchableHighlight
         onPress={handleSetBookmark}
         underlayColor="transparent"
@@ -23,11 +29,11 @@ const Chapter = ({
 )
 
 Chapter.propTypes = {
-  id: PropTypes.string.isRequired,
   title: PropTypes.string,
   data: PropTypes.string,
   hasBookmark: PropTypes.bool,
-  handleSetBookmark: PropTypes.func
+  handleSetBookmark: PropTypes.func,
+  owner: PropTypes.bool
 }
 
 export default Chapter

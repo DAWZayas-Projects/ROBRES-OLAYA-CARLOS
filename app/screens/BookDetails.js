@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import { Chapter } from '../containers'
 
-const BookDetails = ({ bookInfo, chapters }) => (
+const BookDetails = ({ bookInfo, chapters, owner }) => (
   <View style={{ flex: 1 }}>
     <Header style={styles.bookInfo} noShadow>
       <Body>
@@ -17,7 +17,7 @@ const BookDetails = ({ bookInfo, chapters }) => (
     <FlatList
       data={chapters}
       keyExtractor={item => item.id}
-      renderItem={({ item }) => <Chapter {...item} />}
+      renderItem={({ item }) => <Chapter {...item} owner={owner} />}
       ListFooterComponent={<View style={{ paddingTop: 10 }} />}
     />
   </View>
@@ -25,7 +25,8 @@ const BookDetails = ({ bookInfo, chapters }) => (
 
 BookDetails.propTypes = {
   bookInfo: PropTypes.object,
-  chapters: PropTypes.array
+  chapters: PropTypes.array,
+  owner: PropTypes.bool
 }
 
 export default BookDetails
