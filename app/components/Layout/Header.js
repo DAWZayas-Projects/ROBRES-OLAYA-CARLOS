@@ -1,14 +1,14 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Button, Icon, Title } from 'native-base'
+import { Button, H2, Icon } from 'native-base'
 import PropTypes from 'prop-types'
 
 const Header = ({ navigation, navigationOptions }) => (
   <View style={styles.header}>
     <Button rounded light transparent onPress={navigation.toggleDrawer} style={styles.button}>
-      <Icon name="menu" />
+      <Icon style={{ fontSize: 30 }} name="menu" />
     </Button>
-    <Title>{navigationOptions.title}</Title>
+    <H2 style={{ color: 'white' }}>{navigationOptions.title}</H2>
   </View>
 )
 
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: 50,
+    height: 60,
     backgroundColor: '#123456'
   },
   button: {

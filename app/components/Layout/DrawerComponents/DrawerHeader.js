@@ -1,14 +1,16 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Thumbnail, Text } from 'native-base'
+import { H3, Thumbnail, Text } from 'native-base'
 import PropTypes from 'prop-types'
 
-const DrawerHeader = ({ alias, profilePic }) => (
+const DrawerHeader = ({
+  userName, alias, exLibris, profilePic
+}) => (
   <View transparent style={[styles.container]}>
-    <Thumbnail style={{ marginHorizontal: 10 }} source={{ uri: profilePic }} />
+    <Thumbnail large style={{ marginHorizontal: 10 }} source={{ uri: profilePic }} />
     <View>
-      <Text style={{ color: 'white' }}>{alias}</Text>
-      <Text note>Apuntador</Text>
+      <H3 style={{ color: 'white' }}>{alias || userName}</H3>
+      <Text note>{exLibris}</Text>
     </View>
   </View>
 )
@@ -19,7 +21,9 @@ DrawerHeader.defaultProps = {
 }
 
 DrawerHeader.propTypes = {
+  userName: PropTypes.string,
   alias: PropTypes.string,
+  exLibris: PropTypes.string,
   profilePic: PropTypes.string
 }
 
@@ -27,7 +31,7 @@ export default DrawerHeader
 
 const styles = StyleSheet.create({
   container: {
-    height: 100,
+    height: 120,
     backgroundColor: '#123456',
     flexDirection: 'row',
     alignItems: 'center',

@@ -97,12 +97,13 @@ export default createDrawerNavigator(
     contentComponent: Drawer,
     contentOptions: {
       inactiveTintColor: '#123456',
+      inactiveLabelStyle: { color: '#12345699' },
       activeTintColor: '#123456',
       activeBackgroundColor: '#12345633',
       activeLabelStyle: { color: '#123456' },
       itemsContainerStyle: { paddingTop: 0 },
       itemStyle: {
-        height: 45,
+        height: 60,
         borderBottomWidth: 0.5,
         borderBottomColor: '#CCC'
       }
