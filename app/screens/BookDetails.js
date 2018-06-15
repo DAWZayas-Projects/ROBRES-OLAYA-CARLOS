@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
-import { Header, Body, Title, Subtitle, Right } from 'native-base'
+import { Header, Body, Title, Subtitle } from 'native-base'
 import PropTypes from 'prop-types'
 
 import { Chapter } from '../containers'
@@ -10,9 +10,8 @@ const BookDetails = ({ bookInfo, chapters, owner }) => (
     <Header style={styles.bookInfo} noShadow>
       <Body>
         <Title style={{ color: '#333' }}>{bookInfo.title}</Title>
-        <Subtitle style={{ color: '#333' }}>{bookInfo.category}</Subtitle>
+        <Subtitle style={{ color: '#333' }}>{`${bookInfo.category} - ${bookInfo.author}`}</Subtitle>
       </Body>
-      <Right />
     </Header>
     <FlatList
       data={chapters}
