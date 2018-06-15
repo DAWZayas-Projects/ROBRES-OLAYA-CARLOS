@@ -94,6 +94,8 @@ export default createDrawerNavigator(
     }
   },
   {
+    initialRouteName: 'LibraryStack',
+    backBehavior: 'initialRoute',
     contentComponent: Drawer,
     contentOptions: {
       inactiveTintColor: '#123456',
