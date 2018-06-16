@@ -1,8 +1,7 @@
 import React from 'react'
 import { Icon } from 'native-base'
 import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
-import { BooksView, MyBooksView, BookDetails, BookmarksView } from '../../containers'
-import ProfilePageView from '../../screens/ProfilePageView'
+import { BooksView, MyBooksView, BookDetails, BookmarksView, ProfileView } from '../../containers'
 
 import Header from '../../components/Layout/Header'
 import Drawer from '../../components/Layout/Drawer'
@@ -25,7 +24,7 @@ const LibraryStack = createStackNavigator(
 
 const ProfileStack = createStackNavigator(
   {
-    screen: ProfilePageView
+    screen: ProfileView
   },
   {
     headerMode: 'float',
