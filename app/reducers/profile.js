@@ -1,3 +1,5 @@
+import R from 'ramda'
+
 import { GET_PROFILE_INFO_SUCCESS, SET_BOOKMARK_SUCCESS } from '../actions/profile'
 
 const initialState = {
@@ -23,19 +25,20 @@ export default (state = initialState, action) => {
     }
     case SET_BOOKMARK_SUCCESS: {
       const { bookId, chapterId, chapterTitle } = action.payload
+      const bookmark = { bookId, chapterId, chapterTitle }
+      let bookmarks = [...state.aditionalInfo.bookmarks]
+
+      if (bookmarks.find(bm => R.equals(bm, bookmark))) {
+        bookmarks = bookmarks.filter(bm => !R.equals(bm, bookmark))
+      } else {
+        bookmarks = [...bookmarks, bookmark]
+      }
 
       return {
         ...state,
         aditionalInfo: {
           ...state.aditionalInfo,
-          bookmarks: [
-            ...state.aditionalInfo.bookmarks,
-            {
-              bookId,
-              chapterId,
-              chapterTitle
-            }
-          ]
+          bookmarks
         }
       }
     }
