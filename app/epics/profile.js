@@ -5,7 +5,9 @@ import {
   GET_PROFILE_INFO,
   getProfileInfoSuccess,
   SET_BOOKMARK,
-  setBookmarkSuccess
+  setBookmarkSuccess,
+  SET_PROFILE_INFO,
+  setProfileInfoSuccess
 } from '../actions/profile'
 
 const getProfileInfo$ = action$ =>
@@ -17,4 +19,7 @@ const getProfileInfo$ = action$ =>
 const setBookmark$ = action$ =>
   action$.ofType(SET_BOOKMARK).switchMap(action => [setBookmarkSuccess(action.payload)])
 
-export default [getProfileInfo$, setBookmark$]
+const setProfileInfo$ = action$ =>
+  action$.ofType(SET_PROFILE_INFO).switchMap(action => [setProfileInfoSuccess(action.payload)])
+
+export default [getProfileInfo$, setBookmark$, setProfileInfo$]

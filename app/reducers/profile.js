@@ -1,6 +1,10 @@
 import R from 'ramda'
 
-import { GET_PROFILE_INFO_SUCCESS, SET_BOOKMARK_SUCCESS } from '../actions/profile'
+import {
+  GET_PROFILE_INFO_SUCCESS,
+  SET_BOOKMARK_SUCCESS,
+  SET_PROFILE_INFO_SUCCESS
+} from '../actions/profile'
 
 const initialState = {
   info: {
@@ -39,6 +43,17 @@ export default (state = initialState, action) => {
         aditionalInfo: {
           ...state.aditionalInfo,
           bookmarks
+        }
+      }
+    }
+    case SET_PROFILE_INFO_SUCCESS: {
+      const profileInfo = action.payload
+
+      return {
+        ...state,
+        aditionalInfo: {
+          ...state.aditionalInfo,
+          ...profileInfo
         }
       }
     }

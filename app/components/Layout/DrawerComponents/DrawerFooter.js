@@ -1,9 +1,11 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
+import { Icon } from 'native-base'
 
 const FooterDrawer = () => (
   <View style={styles.container}>
-    <Text style={styles.text}>Isindireyya</Text>
+    <Icon style={styles.text} name="copyright" type="MaterialIcons" />
+    <Text style={styles.text}> Isindireyya 2018</Text>
   </View>
 )
 
@@ -12,11 +14,13 @@ export default FooterDrawer
 const styles = StyleSheet.create({
   container: {
     height: 30,
-    justifyContent: 'space-around',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    padding: 5
+    padding: 10
   },
   text: {
-    color: '#CCCC'
+    color: '#CCCC',
+    fontSize: 12
   }
 })
