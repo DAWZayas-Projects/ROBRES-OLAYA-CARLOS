@@ -1,18 +1,19 @@
-import { compose } from 'ramda'
 import { connect } from 'react-redux'
 import { NavigationActions } from 'react-navigation'
 
-import { getUserBookmarks } from '../actions/book'
+import { setBookmark } from '../actions/profile'
 import BookmarksView from '../screens/BookmarksView'
-import WithDidMountAction from '../components/WithDidMountAction'
 
 const mapStateToProps = ({ book, profile }) => ({
-  userBookmarks: profile.aditionalInfo.bookmarks,
-  bookmarks: book.userBookmarks
+  bookmarks: profile.aditionalInfo.bookmarks.map(bookmark => ({
+    ...book.books.find(bk => bk.info.bookId === bookmark.bookId).info,
+    chapterId: bookmark.chapterId,
+    chapterTitle: bookmark.chapterTitle
+  }))
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleDidMountAction: bookmarks => dispatch(getUserBookmarks(bookmarks)),
+  handleDeleteBookmark: bookmark => dispatch(setBookmark(bookmark)),
   handleOnPress: bookId =>
     dispatch(NavigationActions.navigate({
       routeName: 'BookDetails',
@@ -20,13 +21,4 @@ const mapDispatchToProps = dispatch => ({
     }))
 })
 
-const mergeProps = (stateProps, dispatchProps, ownProps) =>
-  Object.assign({}, ownProps, stateProps, {
-    ...dispatchProps,
-    handleDidMountAction: () => dispatchProps.handleDidMountAction(stateProps.userBookmarks)
-  })
-
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps, mergeProps),
-  WithDidMountAction
-)(BookmarksView)
+export default connect(mapStateToProps, mapDispatchToProps)(BookmarksView)

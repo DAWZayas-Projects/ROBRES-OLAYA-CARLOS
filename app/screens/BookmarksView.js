@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { TouchableNativeFeedback } from 'react-native'
-import { List, ListItem, Thumbnail, Body, Text } from 'native-base'
+import { List, ListItem, Thumbnail, Body, Text, Right, Icon } from 'native-base'
 
-const Bookmarks = ({ bookmarks, handleOnPress }) => (
+const Bookmarks = ({ bookmarks, handleOnPress, handleDeleteBookmark }) => (
   <List>
     {bookmarks.map(({
       bookId, thumbnail, title, chapterId, chapterTitle
@@ -17,8 +17,17 @@ const Bookmarks = ({ bookmarks, handleOnPress }) => (
           <Thumbnail square size={80} source={{ uri: thumbnail }} />
           <Body>
             <Text>{title}</Text>
-            <Text note>{chapterTitle}</Text>
+            <Text numberOfLines={1} note>
+              {chapterTitle}
+            </Text>
           </Body>
+          <Right>
+            <TouchableNativeFeedback
+              onPress={() => handleDeleteBookmark({ bookId, chapterId, chapterTitle })}
+            >
+              <Icon style={{ fontSize: 30 }} name="close-circle" />
+            </TouchableNativeFeedback>
+          </Right>
         </ListItem>
       </TouchableNativeFeedback>
     ))}
@@ -27,7 +36,8 @@ const Bookmarks = ({ bookmarks, handleOnPress }) => (
 
 Bookmarks.propTypes = {
   bookmarks: PropTypes.array,
-  handleOnPress: PropTypes.func
+  handleOnPress: PropTypes.func,
+  handleDeleteBookmark: PropTypes.func
 }
 
 export default Bookmarks
