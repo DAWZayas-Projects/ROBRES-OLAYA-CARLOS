@@ -90,6 +90,7 @@ class ProfilePage extends Component {
               <Text style={{ fontSize: 14, color: '#123456', paddingLeft: 5 }}>Alias:</Text>
               <TextInput
                 style={{ height: 40 }}
+                maxLength={15}
                 onChangeText={text => this.setState({ alias: text })}
                 value={this.state.alias}
                 placeholder="Alias..."
@@ -108,6 +109,7 @@ class ProfilePage extends Component {
               </Text>
               <TextInput
                 style={{ height: 40 }}
+                maxLength={10}
                 onChangeText={text => this.setState({ exLibris: text })}
                 value={this.state.exLibris}
                 placeholder="ExLibris..."

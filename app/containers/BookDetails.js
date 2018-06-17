@@ -1,9 +1,13 @@
-import { compose } from 'ramda'
+import React from 'react'
+import { compose, isEmpty } from 'ramda'
 import { connect } from 'react-redux'
+import { NavigationActions } from 'react-navigation'
 
 import { getBookDetails } from '../actions/book'
 import BookDetails from '../screens/BookDetails'
 import WithDidMountAction from '../components/WithDidMountAction'
+
+const BookDetailsContainer = props => !isEmpty(props.bookInfo) && <BookDetails {...props} />
 
 const mapStateToProps = ({ book, profile }) => ({
   bookInfo: book.bookDetails.info,
@@ -16,8 +20,26 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const bookId = params && params.bookId
 
   return {
-    handleDidMountAction: () => dispatch(getBookDetails(bookId))
+    handleDidMountAction: () => dispatch(getBookDetails(bookId)),
+    handleChangeTitle: ({ title, category, author }) =>
+      dispatch(NavigationActions.setParams({
+        params: {
+          title,
+          category,
+          author
+        },
+        key: 'LibraryStack'
+      }))
   }
 }
 
-export default compose(connect(mapStateToProps, mapDispatchToProps), WithDidMountAction)(BookDetails)
+const mergeProps = (stateProps, dispatchProps, ownProps) =>
+  Object.assign({}, ownProps, stateProps, {
+    ...dispatchProps,
+    handleChangeTitle: dispatchProps.handleChangeTitle(stateProps.bookInfo)
+  })
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps, mergeProps),
+  WithDidMountAction
+)(BookDetailsContainer)
