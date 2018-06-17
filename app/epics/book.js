@@ -5,7 +5,9 @@ import {
   GET_ALL_BOOKS,
   getAllBooksSuccess,
   GET_BOOK_DETAILS,
-  getBookDetailsSuccess
+  getBookDetailsSuccess,
+  CONFIRM_CHANGES,
+  confirmChangesSuccess
 } from '../actions/book'
 
 const getAllBooks$ = action$ =>
@@ -14,4 +16,7 @@ const getAllBooks$ = action$ =>
 const getBookDetails$ = action$ =>
   action$.ofType(GET_BOOK_DETAILS).switchMap(action => [getBookDetailsSuccess(action.payload)])
 
-export default [getAllBooks$, getBookDetails$]
+const confirmChanges$ = action$ =>
+  action$.ofType(CONFIRM_CHANGES).switchMap(action => [confirmChangesSuccess(action.payload)])
+
+export default [getAllBooks$, getBookDetails$, confirmChanges$]

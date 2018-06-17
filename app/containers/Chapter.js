@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 
 import { setBookmark } from '../actions/profile'
+import { confirmChanges } from '../actions/book'
 import Chapter from '../components/Chapter'
 
 const mapStateToProps = ({ profile, book }, ownProps) => {
@@ -20,13 +21,21 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       chapterId: ownProps.id,
       chapterTitle: ownProps.title,
       bookId
+    })),
+  handleConfirmChages: bookId => (chapterTitle, data) =>
+    dispatch(confirmChanges({
+      bookId,
+      chapterId: ownProps.id,
+      chapterTitle,
+      data
     }))
 })
 
 const mergeProps = (stateProps, dispatchProps, ownProps) =>
   Object.assign({}, ownProps, stateProps, {
     ...dispatchProps,
-    handleSetBookmark: () => dispatchProps.handleSetBookmark(stateProps.userId, stateProps.bookId)
+    handleSetBookmark: () => dispatchProps.handleSetBookmark(stateProps.userId, stateProps.bookId),
+    handleConfirmChages: dispatchProps.handleConfirmChages(stateProps.bookId)
   })
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Chapter)
