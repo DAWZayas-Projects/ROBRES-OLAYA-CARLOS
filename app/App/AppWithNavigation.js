@@ -33,8 +33,8 @@ class App extends Component {
 
   confirmExit = () =>
     Alert.alert(
-      '¿Salir de Avirato TPV?',
-      'Confirme que desea salir de la aplicación',
+      '¿Seguro que quieres salir?',
+      'Aún queda mucho por leer',
       [
         { text: 'Cancelar', onPress: () => ({}), style: 'cancel' },
         { text: 'Salir', onPress: BackHandler.exitApp }
